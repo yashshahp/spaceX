@@ -1,0 +1,20 @@
+<mat-grid-list cols="2">
+    <mat-grid-tile *ngFor="let lp of landingPads">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>{{lp?.full_name}}</mat-card-title>
+                <mat-card-subtitle>{{lp?.status}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <p>Location</p>
+                <p>[ Name : {{lp?.location?.name}}</p>
+                <p>Region : {{lp?.location?.region}}</p>
+                <p>Latitude : {{lp?.location?.latitude}}</p>
+                <p>Longitude : {{lp?.location?.longitude}} ]</p>
+                <p>Attempted Landings : {{lp?.attempted_landings}}</p>
+                <p>Successful Landings : {{lp?.successful_landings}}</p>
+                <p>Details : {{lp?.details}}</p>
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

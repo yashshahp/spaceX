@@ -1,0 +1,17 @@
+<mat-grid-list cols="4">
+    <mat-grid-tile *ngFor="let capsule of capsules">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>{{capsule?.capsule_serial}}</mat-card-title>
+                <mat-card-subtitle>{{capsule?.capsule_id}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <p>Status : {{capsule?.status}}</p>
+                <p *ngIf="capsule?.original_launch">Launch : {{capsule?.original_launch | date:'d MMM y, h:mm a'}}</p>
+                <p *ngFor="let mission of capsule?.missions">Mission : {{mission.name}} Flights: {{mission.flight}}</p>
+                <p>Landings : {{capsule?.landings}} Reuse Count : {{capsule?.reuse_count}}</p>
+                <p *ngIf="capsule?.details">Details : {{capsule?.details}}</p>
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

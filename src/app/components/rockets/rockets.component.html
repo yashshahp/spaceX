@@ -1,0 +1,25 @@
+<div *ngFor="let rocket of rockets">
+    <mat-card class="example-card">
+        <mat-card-header>
+            <mat-card-title>{{rocket?.rocket_name}}</mat-card-title>
+            <mat-card-subtitle>By: {{rocket?.company}}, {{rocket?.country}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="flex-container">
+                <div>
+                    <img src="{{rocket?.flickr_images[1]}}" style="height: 320px;width: 320px;">
+                </div>
+                <div>
+                    <p>Height: {{rocket?.height.meters}}m</p>
+                    <p>Mass: {{rocket?.mass.kg}}kg</p>
+                    <p *ngIf="rocket?.landing_legs.number">No. of Landing Legs: {{rocket?.landing_legs.number}}</p>
+                    <p *ngIf="rocket?.landing_legs.material">Material of Landing Legs: {{rocket?.landing_legs.material}}</p>
+                    <p>First Flight: {{rocket?.first_flight}}</p>
+                    <p>Engine Type: {{rocket?.engines.type}}</p>
+                </div>
+            </div>
+            <p>Description: {{rocket?.description}}</p>
+        </mat-card-content>
+    </mat-card>
+    <hr>
+</div>

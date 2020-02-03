@@ -1,0 +1,27 @@
+<mat-grid-list cols="2">
+    <mat-grid-tile *ngFor="let ship of ships">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>{{ship?.ship_name}}</mat-card-title>
+                <mat-card-subtitle>{{ship?.ship_type}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="flex-container">
+                    <div *ngIf="ship?.image">
+                        <img src="{{ship?.image}}" style="height: 320px;width: 320px;">
+                    </div>
+                    <div>
+                        <p>Roles : {{ship?.roles.join(', ')}}</p>
+                        <div *ngFor="let mission of ship?.missions">
+                            <p>Mission Name: {{mission.name}}</p>
+                            <p>Flight: {{mission.flight}}</p>
+                        </div>
+                        <p>Year Built: {{ship?.year_built}}</p>
+                        <p>Home Port: {{ship?.home_port}}</p>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+        <hr>
+    </mat-grid-tile>
+</mat-grid-list>

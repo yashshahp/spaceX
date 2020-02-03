@@ -1,0 +1,16 @@
+<mat-grid-list cols="5">
+    <mat-grid-tile *ngFor="let pl of payloads">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>{{pl?.payload_id}}</mat-card-title>
+                <mat-card-subtitle>{{pl?.nationality}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <p>Customers: {{pl?.customers.join(", ")}}</p>
+                <p>Manufacturer: {{pl?.manufacturer}}</p>
+                <p>Type: {{pl?.payload_type}}</p>
+                <p>Orbit: {{pl?.orbit}}</p>
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

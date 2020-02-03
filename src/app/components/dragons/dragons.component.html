@@ -1,0 +1,31 @@
+<div *ngFor="let dragon of dragons">
+    <mat-card class="example-card">
+        <mat-card-header>
+            <mat-card-title>{{dragon?.name}}</mat-card-title>
+            <mat-card-subtitle>{{dragon?.type}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="flex-container">
+            <div>
+                <img src="{{dragon?.flickr_images[0]}}" style="height: 320px;width: 320px;">
+            </div>
+            <div>
+                <p>Mass : {{dragon?.dry_mass_kg}}kg</p>
+                <p>Heat Shield</p>
+                <p>Material : {{dragon?.heat_shield.material}}</p>
+                <p>Thickness : {{dragon?.heat_shield.size_meters}}m</p>
+                <p>Temperature Resistance upto : {{dragon?.heat_shield.temp_degrees}}°C</p>
+                <div *ngFor="let thruster of dragon?.thrusters">
+                    Thruster
+                    <p>Type: {{thruster.type}}</p>
+                    <p>Fuel_1: {{thruster.fuel_1}}</p>
+                    <p>Fuel_2: {{thruster.fuel_2}}</p>
+                </div>
+                <p>First Flight: {{dragon?.first_flight}}</p>
+                <p>Description : {{dragon?.description}}</p>
+            </div>
+        </div>
+        </mat-card-content>
+    </mat-card>
+    <hr>
+</div>

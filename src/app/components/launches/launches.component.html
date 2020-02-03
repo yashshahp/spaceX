@@ -1,0 +1,17 @@
+<mat-grid-list cols="4">
+    <mat-grid-tile *ngFor="let launch of launches">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>Mission Name: {{launch?.mission_name}}</mat-card-title>
+                <mat-card-subtitle>Launch Year: {{launch?.launch_year}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <p>Launch Date: {{launch?.launch_date_utc | date:"short"}}</p>
+                <p>Rocket Name: {{launch?.rocket?.rocket_name}}</p>
+                <p *ngIf="launch?.ships.length">Ships: {{launch?.ships.join(", ")}}</p>
+                <p>Launch Site Name: {{launch?.launch_site?.site_name}}</p>
+                <p *ngIf="launch?.launch_success">Launch Successfull</p>
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

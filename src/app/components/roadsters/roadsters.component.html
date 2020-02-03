@@ -1,0 +1,22 @@
+<mat-card *ngIf="roadsters">
+    <mat-card-header>
+        <mat-card-title>{{roadsters?.name}}</mat-card-title>
+        <mat-card-subtitle>Launch Date: {{roadsters?.launch_date_utc | date:'d MMM y, h:mm a'}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="flex-container">
+            <div *ngIf="roadsters?.flickr_images">
+                <img src="{{roadsters?.flickr_images[3]}}" style="height: 320px;width: 320px;">
+            </div>
+            <div>
+                <p>Mass : {{roadsters?.launch_mass_kg}}kg</p>
+                <p>Orbit Type: {{roadsters?.orbit_type | uppercase}}</p>
+                <p>Period Days: {{roadsters?.period_days}}</p>
+                <p>Speed: {{roadsters?.speed_kph  }}Km/hr</p>
+                <p>Distance From Earth: {{roadsters?.earth_distance_km  }}Km</p>
+                <p>Details: {{roadsters?.details}}</p>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
+<hr>

@@ -1,0 +1,17 @@
+<mat-grid-list cols="4">
+    <mat-grid-tile *ngFor="let core of cores">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>{{core?.core_serial}}</mat-card-title>
+                <mat-card-subtitle>{{core?.status}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <p *ngIf="core?.original_launch">Launch : {{core?.original_launch | date:'short'}}</p>
+                <p *ngFor="let mission of core?.missions">Mission : {{mission.name}}  Flights: {{mission.flight}}</p>
+                <p *ngIf="core?.water_landings">Water Landings : {{core?.water_landings}}</p>
+                <p>Reuse Count : {{core?.reuse_count}}</p>
+                <p *ngIf="core?.details">Details : {{core?.details}}</p>
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

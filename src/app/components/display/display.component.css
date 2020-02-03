@@ -25,16 +25,10 @@ mat-sidenav-container{
     transition: 0.5s;
   }
 .button:hover span {
-    padding-right: 15px;
+    padding-right: 25px;
   }
   
   .button:hover span:after {
     opacity: 1;
     right: 0;
-  } 
-  mat-progress-bar{
-    height: 4px;
-  }
-  mat-sidenav-container{
-    min-width: 400px !important;
   }

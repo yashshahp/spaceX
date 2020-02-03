@@ -1,0 +1,16 @@
+<mat-grid-list cols="2">
+    <mat-grid-tile *ngFor="let mission of missions">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Name: {{mission?.mission_name}}</mat-card-title>
+                <mat-card-subtitle>ID: {{mission?.mission_id}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <p>Manufacturers: {{mission?.manufacturers.join(", ")}}</p>
+                <p>Payloads: {{mission?.payload_ids.join(", ")}}</p>
+                <p *ngFor="let mission of core?.missions">Mission : {{mission.name}}  Flights: {{mission.flight}}</p>
+                <p>Description : {{mission?.description}}</p>
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
